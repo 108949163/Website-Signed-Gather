@@ -12,7 +12,7 @@ def main(Cookie):
     headers = {'Content-Type': 'application/x-www-form-urlencoded','Cookie':Cookie}
     # 账号密码
     # 获取登陆后的账号
-    c = r.get(url="https://www.cunhua.nl/",headers=headers)
+    c = r.get(url="https://www.cunhua.ch/",headers=headers)
     # 获取formhash
     loginform = re.findall('name="formhash" value="(.*?)"', c.text)[0]
     print(loginform)
@@ -23,7 +23,7 @@ def main(Cookie):
     mail(Content=str(c3.text), Title='村花签到情况')
     # 挂机
     for i in range(0, 4320):
-        c1 = r.get(url='https://cunhua.nl',headers=headers)
+        c1 = r.get(url='https://cunhua.ch',headers=headers)
         time.sleep(20)
     r.close()
 
